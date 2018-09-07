@@ -14,6 +14,6 @@ namespace FragonChallenge.Business
         public string CPF { get; set; }
         public DateTime BirthDate { get; set; }
         public int Age { get; set; }
-        public int Profession { get; set; }
+        public int? Profession { get; set; }
     }
 }

@@ -10,10 +10,10 @@ namespace FragonChallenge.Data
 {
     public class CustomerData:ConfigData
     {
-        public void DeleteById(int id)
+        public int DeleteById(int id)
         {
             string sql = "DELETE Customer WHERE CustomerId =@id";
-            SqlCommand cmd = new SqlCommand(sql);
+            SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", id);
             try
             {
@@ -24,13 +24,14 @@ namespace FragonChallenge.Data
             {
                 throw e;
             }
+            return 0;
 
         }
 
         public List<Business.Customer> GetAllCustomer()
         {
-            string sql = "SELECT CustomerId, FirsName, LastName, CPF, BirthDate, Age, Profession FROM Customer ORDER BY CustomerId DESC";
-            var cmd = new SqlCommand(sql);
+            string sql = "SELECT CustomerId, FirstName, LastName, CPF, BirthDate, Age, Profession FROM Customer ORDER BY FirstName";
+            var cmd = new SqlCommand(sql, conexao);
             List<Business.Customer> listCustomer = new List<Business.Customer>();
             Business.Customer cus = null;
             try
@@ -38,7 +39,8 @@ namespace FragonChallenge.Data
                 conexao.Open();
                 using (var reader = cmd.ExecuteReader(CommandBehavior.CloseConnection))
                 {
-                    if (reader.Read())
+
+                    while(reader.Read())
                     {
                         cus = new Business.Customer();
                         cus.CustomerId = (int)reader["CustomerId"];
@@ -62,8 +64,8 @@ namespace FragonChallenge.Data
 
         public Business.Customer GetCustomerById(int id)
         {
-            string sql = "SELECT CustomerId, FirsName, LastName, CPF, BirthDate, Age, Profession FROM Customer WHERE CustomerId=@id";
-            SqlCommand cmd = new SqlCommand(sql);
+            string sql = "SELECT CustomerId, FirstName, LastName, CPF, BirthDate, Age, Profession FROM Customer WHERE CustomerId=@id";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", id);
             Business.Customer cus = null;
             try
@@ -101,7 +103,7 @@ namespace FragonChallenge.Data
         public int InsertCustomer(Business.Customer customer)
         {
             string sql = "INSERT INTO Customer (FirstName, LastName, CPF, BirthDate, Age, Profession) VALUES (@FirstName, @LastName, @CPF, @BirthDate, @Age, @Profession)";
-            SqlCommand cmd = new SqlCommand(sql);
+            SqlCommand cmd = new SqlCommand(sql,conexao);
             cmd.Parameters.AddWithValue("@FirstName", customer.FirstName);
             cmd.Parameters.AddWithValue("@LastName", customer.LastName);
             cmd.Parameters.AddWithValue("@CPF", customer.CPF);
@@ -112,20 +114,19 @@ namespace FragonChallenge.Data
             {
                 conexao.Open();
                 cmd.ExecuteNonQuery();
+               
             }
             catch (Exception e)
             {
                 throw e;
             }
-
             return 0;
-
         }
 
         public int UpdateCustomer(Business.Customer customer)
         {
             string sql = "UPDATE Customer SET FirstName=@FirstName, LastName=@LastName, CPF=@CPF, BirthDate=@BirthDate, Age=@Age, Profession=@Profession WHERE CustomerId=@CustomerId";
-            SqlCommand cmd = new SqlCommand(sql);
+            SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@CustomerId", customer.CustomerId);
             cmd.Parameters.AddWithValue("@FirstName", customer.FirstName);
             cmd.Parameters.AddWithValue("@LastName", customer.LastName);

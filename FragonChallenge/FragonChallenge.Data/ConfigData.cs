@@ -10,10 +10,10 @@ namespace FragonChallenge.Data
 {
     public class ConfigData
     {
-        protected IDbConnection conexao;
+        protected SqlConnection conexao;
         public ConfigData()
         {
-            string ConnString = "Data Source=\\servername\\SQLEXPRESS; Initial Catalog=fragonchallenge; Integrated Security=SSPI; Persist Security Info=false; Trusted_Connection=Yes";
+            string ConnString = "Data Source =.\\SQLEXPRESS; Initial Catalog = fragonchallenge; Integrated Security = True; MultipleActiveResultSets = True";
             conexao = new SqlConnection(ConnString);
         }
 

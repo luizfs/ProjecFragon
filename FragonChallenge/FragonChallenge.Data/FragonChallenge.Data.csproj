@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ConfigData.cs" />
     <Compile Include="CustomerData.cs" />
+    <Compile Include="ProfessionData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
