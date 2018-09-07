@@ -4,10 +4,10 @@ Create table Profession(
 );
 
 create table Customer(
-	CustomerId int not null identity(1,1),
+	CustomerId int not null identity(1,1) primary key,
 	FirstName varchar(30) not null,
 	LastName varchar(100) not null,
-	CPF varchar(11) not null primary key,
+	CPF varchar(11) not null,
 	BirthDate date not null,
 	Age int not null,
 	Profession int null
