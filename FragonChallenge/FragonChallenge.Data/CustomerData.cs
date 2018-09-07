@@ -102,6 +102,9 @@ namespace FragonChallenge.Data
 
         public int InsertCustomer(Business.Customer customer)
         {
+            var check = this.CheckExistsCpf(customer.CPF);
+            if (check.CPF == customer.CPF)
+                return 1;
             string sql = "INSERT INTO Customer (FirstName, LastName, CPF, BirthDate, Age, Profession) VALUES (@FirstName, @LastName, @CPF, @BirthDate, @Age, @Profession)";
             SqlCommand cmd = new SqlCommand(sql,conexao);
             cmd.Parameters.AddWithValue("@FirstName", customer.FirstName);
@@ -125,6 +128,9 @@ namespace FragonChallenge.Data
 
         public int UpdateCustomer(Business.Customer customer)
         {
+            var check = this.CheckExistsCpf(customer.CPF);
+            if (check.CPF == customer.CPF && check.CustomerId != customer.CustomerId)
+                return 1;
             string sql = "UPDATE Customer SET FirstName=@FirstName, LastName=@LastName, CPF=@CPF, BirthDate=@BirthDate, Age=@Age, Profession=@Profession WHERE CustomerId=@CustomerId";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@CustomerId", customer.CustomerId);
@@ -145,6 +151,36 @@ namespace FragonChallenge.Data
             }
 
             return 0;
+        }
+
+        public Business.Customer CheckExistsCpf(string cpf)
+        {
+            string sql = "SELECT CustomerId, CPF FROM Customer WHERE CPF = @cpf";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@cpf", cpf);
+            Business.Customer cp = null;
+            try
+            {
+                conexao.Open();
+                using (var reader = cmd.ExecuteReader(CommandBehavior.CloseConnection))
+                {
+                    if (reader.HasRows)
+                    {
+                        if (reader.Read())
+                        {
+                            cp = new Business.Customer();
+                            cp.CustomerId = (int)reader["CustomerId"];
+                            cp.CPF = reader["CPF"].ToString();
+                        }
+                    }
+                }
+
+            }catch(Exception e)
+            {
+                throw e;
+            }
+
+            return cp;
         }
     }
 }

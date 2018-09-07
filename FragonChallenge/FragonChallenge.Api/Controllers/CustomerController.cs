@@ -79,5 +79,15 @@ namespace FragonChallenge.Api.Controllers
             return 1;
         }
 
+        [HttpPost]
+        [Route("api/Customer/Post/cpf")]
+        public bool Post(string cpf)
+        {
+            var result = new Data.CustomerData();
+            if (result != null)
+                return true;
+            return false;
+        }
+
     }
 }
