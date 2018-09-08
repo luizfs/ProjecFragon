@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.0.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="demo.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav role="navigation" class="navbar navbar-inverse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/#!/Home">Home</a></li>
+                <li><a href="/#!/ListCustomers">List Customer</a></li>
+                <li><a href="/#!/AddCustomers">Add Customer</a></li>
+            </ul>
+
+        </nav>
+        <div ng-view>
+
+        </div>
+
+        <h3 style="margin-top:40px" class="text-center text-info"> Test Fragon</h3>
+    </div>
+
+</body>
+</html>
