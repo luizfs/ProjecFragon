@@ -45,6 +45,11 @@ namespace FragonChallenge.Api.Controllers
         public int Post(string firstName, string lastName, string CPF, DateTime birthDate, int age, int profession)
         {
             var result = new Data.CustomerData();
+            if(CPF != null && CPF != "")
+            {
+                if (result.CheckCpfIsValid(CPF) == false)
+                    return 2;
+            }
             var model = new Business.Customer();
             model.FirstName = firstName;
             model.LastName = lastName;
@@ -64,6 +69,11 @@ namespace FragonChallenge.Api.Controllers
         public int Put(int customerId, string firstName, string lastName, string CPF, DateTime birthDate, int age, int profession)
         {
             var result = new Data.CustomerData();
+            if (CPF != null && CPF != "")
+            {
+                if (result.CheckCpfIsValid(CPF) == false)
+                    return 2;
+            }
             var model = new Business.Customer();
             model.CustomerId = customerId;
             model.FirstName = firstName;
@@ -80,14 +90,13 @@ namespace FragonChallenge.Api.Controllers
         }
 
         [HttpPost]
-        [Route("api/Customer/Post/cpf")]
+        [Route("api/Customer/Post/{cpf}")]
         public bool Post(string cpf)
         {
             var result = new Data.CustomerData();
-            if (result != null)
+            if (result.CheckExistsCpf(cpf) != null)
                 return true;
             return false;
         }
-
     }
 }

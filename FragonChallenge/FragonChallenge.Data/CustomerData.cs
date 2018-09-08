@@ -103,8 +103,12 @@ namespace FragonChallenge.Data
         public int InsertCustomer(Business.Customer customer)
         {
             var check = this.CheckExistsCpf(customer.CPF);
-            if (check.CPF == customer.CPF)
-                return 1;
+            if(check != null)
+            {
+                if (check.CPF == customer.CPF)
+                    return 1;
+            }
+           
             string sql = "INSERT INTO Customer (FirstName, LastName, CPF, BirthDate, Age, Profession) VALUES (@FirstName, @LastName, @CPF, @BirthDate, @Age, @Profession)";
             SqlCommand cmd = new SqlCommand(sql,conexao);
             cmd.Parameters.AddWithValue("@FirstName", customer.FirstName);
@@ -129,8 +133,12 @@ namespace FragonChallenge.Data
         public int UpdateCustomer(Business.Customer customer)
         {
             var check = this.CheckExistsCpf(customer.CPF);
-            if (check.CPF == customer.CPF && check.CustomerId != customer.CustomerId)
-                return 1;
+            if(check != null)
+            {
+                if (check.CPF == customer.CPF && check.CustomerId != customer.CustomerId)
+                    return 1;
+            }
+           
             string sql = "UPDATE Customer SET FirstName=@FirstName, LastName=@LastName, CPF=@CPF, BirthDate=@BirthDate, Age=@Age, Profession=@Profession WHERE CustomerId=@CustomerId";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@CustomerId", customer.CustomerId);
@@ -181,6 +189,50 @@ namespace FragonChallenge.Data
             }
 
             return cp;
+        }
+
+        public bool CheckCpfIsValid(string CPF)
+        {
+            int[] mt1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] mt2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            string TempCPF;
+            string Digit;
+            int sum;
+            int rest;
+
+            CPF = CPF.Trim();
+            CPF = CPF.Replace(".", "").Replace("-", "");
+
+            if (CPF.Length != 11)
+                return false;
+
+            TempCPF = CPF.Substring(0, 9);
+            sum = 0;
+            for (int i = 0; i < 9; i++)
+                sum += int.Parse(TempCPF[i].ToString()) * mt1[i];
+
+            rest = sum % 11;
+            if (rest < 2)
+                rest = 0;
+            else
+                rest = 11 - rest;
+
+            Digit = rest.ToString();
+            TempCPF = TempCPF + Digit;
+            sum = 0;
+
+            for (int i = 0; i < 10; i++)
+                sum += int.Parse(TempCPF[i].ToString()) * mt2[i];
+
+            rest = sum % 11;
+            if (rest < 2)
+                rest = 0;
+            else
+                rest = 11 - rest;
+
+            Digit = Digit + rest.ToString();
+
+            return CPF.EndsWith(Digit);
         }
     }
 }
