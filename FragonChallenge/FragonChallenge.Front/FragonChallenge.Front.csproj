@@ -72,7 +72,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="demo.js" />
+    <Content Include="Controllers\AddCustomersController.js" />
+    <Content Include="Controllers\DetailsCustomersController.js" />
+    <Content Include="Controllers\EditCustomersController.js" />
+    <Content Include="Controllers\ListCustomersController.js" />
+    <Content Include="Controllers\TranslationController.js" />
+    <Content Include="Router.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Index.html" />
     <Content Include="Scripts\angular-animate.js" />
@@ -99,6 +104,8 @@
     <Content Include="Scripts\angular-sanitize.min.js" />
     <Content Include="Scripts\angular-touch.js" />
     <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular-translate-loader-static-files.min.js" />
+    <Content Include="Scripts\angular-translate.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -849,7 +856,7 @@
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Scripts\sitemap.xml" />
     <Content Include="Views\AddCustomers.html" />
-    <Content Include="Views\Home.html" />
+    <Content Include="Views\DetailsCustomers.html" />
     <Content Include="Views\ListCustomers.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -873,6 +880,8 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\jquery-1.9.0.min.map" />
+    <Content Include="Translations\pt.json" />
+    <Content Include="Translations\en.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

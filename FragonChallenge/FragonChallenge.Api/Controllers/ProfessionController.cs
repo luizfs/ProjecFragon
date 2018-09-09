@@ -10,21 +10,15 @@ namespace FragonChallenge.Api.Controllers
     public class ProfessionController : ApiController
     {
         [HttpGet]
-        [Route("api/Profession/Get")]
-        public List<Business.Profession> Get()
+        public List<Entities.Profession> Get()
         {
-            List<Business.Profession> professions = new List<Business.Profession>();
-            var result = new Data.ProfessionData().GetAllProfession();
-            professions.AddRange(result);
-            return professions;
+            return new Business.ProfessionBusiness().GetAll();
         }
 
         [HttpGet]
-        [Route("api/Profession/Get/{id}")]
-        public Business.Profession Get(int id)
+        public Entities.Profession Get(int id)
         {
-            var profession = new Data.ProfessionData().GetProfessionById(id);
-            return profession;
+            return new Business.ProfessionBusiness().GetById(id);
         }
     }
 }

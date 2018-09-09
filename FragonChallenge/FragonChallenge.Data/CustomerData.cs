@@ -28,12 +28,12 @@ namespace FragonChallenge.Data
 
         }
 
-        public List<Business.Customer> GetAllCustomer()
+        public List<Entities.Customer> GetAllCustomer()
         {
             string sql = "SELECT CustomerId, FirstName, LastName, CPF, BirthDate, Age, Profession FROM Customer ORDER BY FirstName";
             var cmd = new SqlCommand(sql, conexao);
-            List<Business.Customer> listCustomer = new List<Business.Customer>();
-            Business.Customer cus = null;
+            List<Entities.Customer> listCustomer = new List<Entities.Customer>();
+            Entities.Customer cus = null;
             try
             {
                 conexao.Open();
@@ -42,7 +42,7 @@ namespace FragonChallenge.Data
 
                     while(reader.Read())
                     {
-                        cus = new Business.Customer();
+                        cus = new Entities.Customer();
                         cus.CustomerId = (int)reader["CustomerId"];
                         cus.FirstName = reader["FirstName"].ToString();
                         cus.LastName = reader["LastName"].ToString();
@@ -62,12 +62,12 @@ namespace FragonChallenge.Data
 
         }
 
-        public Business.Customer GetCustomerById(int id)
+        public Entities.Customer GetCustomerById(int id)
         {
             string sql = "SELECT CustomerId, FirstName, LastName, CPF, BirthDate, Age, Profession FROM Customer WHERE CustomerId=@id";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", id);
-            Business.Customer cus = null;
+            Entities.Customer cus = null;
             try
             {
                 conexao.Open();
@@ -77,7 +77,7 @@ namespace FragonChallenge.Data
                     {
                         if (reader.Read())
                         {
-                            cus = new Business.Customer();
+                            cus = new Entities.Customer();
                             cus.CustomerId = (int)reader["CustomerId"];
                             cus.FirstName = reader["FirstName"].ToString();
                             cus.LastName = reader["LastName"].ToString();
@@ -100,15 +100,8 @@ namespace FragonChallenge.Data
 
         }
 
-        public int InsertCustomer(Business.Customer customer)
+        public int InsertCustomer(Entities.Customer customer)
         {
-            var check = this.CheckExistsCpf(customer.CPF);
-            if(check != null)
-            {
-                if (check.CPF == customer.CPF)
-                    return 1;
-            }
-           
             string sql = "INSERT INTO Customer (FirstName, LastName, CPF, BirthDate, Age, Profession) VALUES (@FirstName, @LastName, @CPF, @BirthDate, @Age, @Profession)";
             SqlCommand cmd = new SqlCommand(sql,conexao);
             cmd.Parameters.AddWithValue("@FirstName", customer.FirstName);
@@ -130,15 +123,8 @@ namespace FragonChallenge.Data
             return 0;
         }
 
-        public int UpdateCustomer(Business.Customer customer)
-        {
-            var check = this.CheckExistsCpf(customer.CPF);
-            if(check != null)
-            {
-                if (check.CPF == customer.CPF && check.CustomerId != customer.CustomerId)
-                    return 1;
-            }
-           
+        public int UpdateCustomer(Entities.Customer customer)
+        {          
             string sql = "UPDATE Customer SET FirstName=@FirstName, LastName=@LastName, CPF=@CPF, BirthDate=@BirthDate, Age=@Age, Profession=@Profession WHERE CustomerId=@CustomerId";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@CustomerId", customer.CustomerId);
@@ -161,12 +147,12 @@ namespace FragonChallenge.Data
             return 0;
         }
 
-        public Business.Customer CheckExistsCpf(string cpf)
+        public Entities.Customer CheckExistsCpf(string cpf)
         {
             string sql = "SELECT CustomerId, CPF FROM Customer WHERE CPF = @cpf";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@cpf", cpf);
-            Business.Customer cp = null;
+            Entities.Customer cp = null;
             try
             {
                 conexao.Open();
@@ -176,14 +162,15 @@ namespace FragonChallenge.Data
                     {
                         if (reader.Read())
                         {
-                            cp = new Business.Customer();
+                            cp = new Entities.Customer();
                             cp.CustomerId = (int)reader["CustomerId"];
                             cp.CPF = reader["CPF"].ToString();
                         }
                     }
                 }
 
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 throw e;
             }
@@ -191,48 +178,5 @@ namespace FragonChallenge.Data
             return cp;
         }
 
-        public bool CheckCpfIsValid(string CPF)
-        {
-            int[] mt1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            int[] mt2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            string TempCPF;
-            string Digit;
-            int sum;
-            int rest;
-
-            CPF = CPF.Trim();
-            CPF = CPF.Replace(".", "").Replace("-", "");
-
-            if (CPF.Length != 11)
-                return false;
-
-            TempCPF = CPF.Substring(0, 9);
-            sum = 0;
-            for (int i = 0; i < 9; i++)
-                sum += int.Parse(TempCPF[i].ToString()) * mt1[i];
-
-            rest = sum % 11;
-            if (rest < 2)
-                rest = 0;
-            else
-                rest = 11 - rest;
-
-            Digit = rest.ToString();
-            TempCPF = TempCPF + Digit;
-            sum = 0;
-
-            for (int i = 0; i < 10; i++)
-                sum += int.Parse(TempCPF[i].ToString()) * mt2[i];
-
-            rest = sum % 11;
-            if (rest < 2)
-                rest = 0;
-            else
-                rest = 11 - rest;
-
-            Digit = Digit + rest.ToString();
-
-            return CPF.EndsWith(Digit);
-        }
     }
 }

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{93A1C65B-4FB7-4E32-9F97-6025A5ABE460}</ProjectGuid>
+    <ProjectGuid>{D9A36A89-B04C-4DF4-9B08-99D75B955C27}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FragonChallenge.Data</RootNamespace>
-    <AssemblyName>FragonChallenge.Data</AssemblyName>
+    <RootNamespace>FragonChallenge.Entites</RootNamespace>
+    <AssemblyName>FragonChallenge.Entites</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,16 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigData.cs" />
-    <Compile Include="CustomerData.cs" />
-    <Compile Include="ProfessionData.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Profession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FragonChallenge.Entites\FragonChallenge.Entites.csproj">
-      <Project>{d9a36a89-b04c-4df4-9b08-99d75b955c27}</Project>
-      <Name>FragonChallenge.Entites</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

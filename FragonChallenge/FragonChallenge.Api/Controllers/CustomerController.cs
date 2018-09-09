@@ -12,91 +12,33 @@ namespace FragonChallenge.Api.Controllers
     public class CustomerController : ApiController
     {
         [HttpGet]
-        [Route("api/Customer/Get")]
-        public List<Business.Customer> Get()
+        public List<Entities.Customer> Get()
         {
-            List<Business.Customer> customers = new List<Business.Customer>();
-            var result = new Data.CustomerData().GetAllCustomer();
-            customers.AddRange(result);
-            return customers;
+            return new Business.CustomerBusiness().GetAll();  
         }
 
         [HttpGet]
-        [Route("api/Customer/Get/{id}")]
-        public Business.Customer Get(int id)
+        public Entities.Customer Get(int id)
         {
-            var customer = new Data.CustomerData().GetCustomerById(id);
-            return customer;
+            return new Business.CustomerBusiness().GetById(id);
         }
 
         [HttpDelete]
-        [Route("api/Customer/Delete/{id}")]
         public int Delete(int id)
         {
-            var result = new Data.CustomerData();
-            if (result.DeleteById(id) == 0)
-                return 0;
-            return 1;
-
+            return new Business.CustomerBusiness().Delete(id);
         }
 
         [HttpPost]
-        [Route("api/Customer/Post/{firstName}/{lastName}/{CPF}/{birthDate}/{age}/{profession}")]
-        public int Post(string firstName, string lastName, string CPF, DateTime birthDate, int age, int profession)
+        public int Post(Entities.Customer customer)
         {
-            var result = new Data.CustomerData();
-            if(CPF != null && CPF != "")
-            {
-                if (result.CheckCpfIsValid(CPF) == false)
-                    return 2;
-            }
-            var model = new Business.Customer();
-            model.FirstName = firstName;
-            model.LastName = lastName;
-            model.CPF = CPF;
-            model.BirthDate = birthDate;
-            model.Age = age;
-            model.Profession = profession;
-
-            if (result.InsertCustomer(model) == 0)
-                return 0;
-            
-         return 1;
+            return new Business.CustomerBusiness().Insert(customer);
         }
 
         [HttpPut]
-        [Route("api/Customer/Put/{CustomerId}/{firstName}/{lastName}/{CPF}/{birthDate}/{age}/{profession}")]
-        public int Put(int customerId, string firstName, string lastName, string CPF, DateTime birthDate, int age, int profession)
+        public int Put(Entities.Customer  customer)
         {
-            var result = new Data.CustomerData();
-            if (CPF != null && CPF != "")
-            {
-                if (result.CheckCpfIsValid(CPF) == false)
-                    return 2;
-            }
-            var model = new Business.Customer();
-            model.CustomerId = customerId;
-            model.FirstName = firstName;
-            model.LastName = lastName;
-            model.CPF = CPF;
-            model.BirthDate = birthDate;
-            model.Age = age;
-            model.Profession = profession;
-
-            if (result.UpdateCustomer(model) == 0)
-                return 0;
-
-            return 1;
-        }
-
-        [HttpPost]
-        [Route("api/Customer/Post/{cpf}")]
-        public bool Post(string cpf)
-        {
-            var result = new Data.CustomerData();
-            if (result.CheckExistsCpf(cpf) != null)
-                return true;
-            return false;
+            return new Business.CustomerBusiness().Update(customer);
         }
     }
 }

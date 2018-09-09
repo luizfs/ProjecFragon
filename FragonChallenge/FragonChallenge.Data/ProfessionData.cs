@@ -10,12 +10,12 @@ namespace FragonChallenge.Data
 {
     public class ProfessionData:ConfigData
     {
-        public List<Business.Profession> GetAllProfession()
+        public List<Entities.Profession> GetAllProfession()
         {
             string sql = "SELECT ProfessionId, NameProfession FROM Profession ORDER BY NameProfession";
             var cmd = new SqlCommand(sql, conexao);
-            List<Business.Profession> listProfession = new List<Business.Profession>();
-            Business.Profession prof = null;
+            List<Entities.Profession> listProfession = new List<Entities.Profession>();
+            Entities.Profession prof = null;
             try
             {
                 conexao.Open();
@@ -24,7 +24,7 @@ namespace FragonChallenge.Data
 
                     while (reader.Read())
                     {
-                        prof = new Business.Profession();
+                        prof = new Entities.Profession();
                         prof.ProfessionId = (int)reader["ProfessionId"];
                         prof.NameProfession = reader["NameProfession"].ToString();
                         listProfession.Add(prof);
@@ -38,12 +38,12 @@ namespace FragonChallenge.Data
             return listProfession;
         }
 
-        public Business.Profession GetProfessionById(int id)
+        public Entities.Profession GetProfessionById(int id)
         {
             string sql = "SELECT ProfessionId, NameProfession FROM Profession WHERE ProfessionId=@id";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", id);
-            Business.Profession prof = null;
+            Entities.Profession prof = null;
             try
             {
                 conexao.Open();
@@ -53,7 +53,7 @@ namespace FragonChallenge.Data
                     {
                         if (reader.Read())
                         {
-                            prof = new Business.Profession();
+                            prof = new Entities.Profession();
                             prof.ProfessionId = (int)reader["ProfessionId"];
                             prof.NameProfession = reader["NameProfession"].ToString();
                            

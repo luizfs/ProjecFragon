@@ -115,6 +115,10 @@
       <Project>{93a1c65b-4fb7-4e32-9f97-6025a5abe460}</Project>
       <Name>FragonChallenge.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FragonChallenge.Entites\FragonChallenge.Entites.csproj">
+      <Project>{d9a36a89-b04c-4df4-9b08-99d75b955c27}</Project>
+      <Name>FragonChallenge.Entites</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
