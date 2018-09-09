@@ -9,5 +9,17 @@
         }, function (error) {
             $scope.status = 'Unable to load customers data: ' + error.message;
         })            
-    }
+    };
+
+    getProfessionById();
+    function getProfessionById() {
+        $scope.d = [];
+        var pathp = $location.path();
+        var idp = pathp.split("/", 3)[2];
+        CustomerApi.getCustomersById(2).then(function (d) {
+            $scope.d.profession = d.d;
+        }, function (erro) {
+            $scope.status = 'Unable to load professions data:' + error.message;
+        })
+    };
 });

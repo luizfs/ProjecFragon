@@ -1,16 +1,16 @@
-﻿<h1 class="text-center text-danger">Details of Customers</h1>
+﻿<h1 class="text-center text-danger" translate>DC</h1>
 <hr />
 <div class="row">
     <div class="col-md-9 col-md-offset-1">
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>CPF</th>
-                    <th>Birth Date</th>
-                    <th>Age</th>
-                    <th>Profesion</th>
+                    <th translate>FN</th>
+                    <th translate>LN</th>
+                    <th translate>CPF</th>
+                    <th translate>BD</th>
+                    <th translate>A</th>
+                    <th translate>PROF</th>
                 </tr>
 
             </thead>
@@ -20,11 +20,11 @@
                 <td>{{data.customers.CPF}} </td>
                 <td>{{data.customers.BirthDate}}</td>
                 <td>{{data.customers.Age}} </td>
-                <td>{{data.customers.Profession}}</td>
+                <td translate>{{d.NameProfession}}</td>
             </tr>
         </table>
         <div class="text-center">
-            <button class="btn btn-info form-control input-lg" onclick="window.location.href='/#!/ListCustomers.html'">Voltar</button>
+            <button class="btn btn-info form-control input-lg" onclick="window.location.href='/#!/ListCustomers.html'" translate>BC</button>
         </div>
     </div>
 </div>

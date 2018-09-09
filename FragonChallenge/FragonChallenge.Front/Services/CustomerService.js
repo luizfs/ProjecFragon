@@ -10,8 +10,8 @@ CustomerService.factory('CustomerApi', function ($http) {
         return $http.get(urlBase + '/Customer');
     };
 
-    CustomerApi.getCustomersById = function (id) {
-        return $http.get(urlBase + '/Customer/' + id);
+    CustomerApi.getCustomersById = function (idp) {
+        return $http.get(urlBase + '/Customer/' + idp);
     };
 
     CustomerApi.getProfessions = function () {

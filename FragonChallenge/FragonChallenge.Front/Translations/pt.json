@@ -2,6 +2,26 @@
   "Edit": "Editar",
   "Details": "Detalhes",
   "Delete": "Deletar",
-  "ListCustomer": "Lista de clientes",
-  "AddCustomer": "Adicionar cliente"
+  "FN": "Nome",
+  "LN": "Sobrenome",
+  "A": "Idade",
+  "BD": "Data de Nascimento",
+  "PROF": "Profissão",
+  "FNC*": "Nome*",
+  "LNC*": "Sobrenome*",
+  "BDC*": "Data de Nascimento*",
+  "PROF*": "Profissão*",
+  "CT": "Clientes",
+  "CI": "Código do Cliente",
+  "LC": "Lista de Clientes",
+  "AC": "Adicionar Cliente",
+  "TF": "Teste Fagron",
+  "DC": "Detalhes do Cliente",
+  "UCA": "Atualizar Cliente",
+  "Add": "Adicionar",
+  "Upd": "Atualizar",
+  "Choose": "Escolha",
+  "DetailCustomer": "Detalhes do Cliente",
+  "BC": "Voltar"
+
 }

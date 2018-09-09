@@ -1,26 +1,26 @@
-﻿<h1 class="text-center text-danger">Add Customers</h1>
+﻿<h1 class="text-center text-danger" translate>AC</h1>
 <br />
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <form>
             <div class="form-group">
-                <label for="inputFirstName">First Name*</label>
-                <input type="text" ng-model="customer.FirstName" class="form-control input-lg" placeholder="Customer First Name" />
-                <label for="inputLastName">Last Name*</label>
-                <input type="text" ng-model="customer.LastName" class="form-control input-lg" placeholder="Customer Last Name" />
+                <label for="inputFirstName" translate>FNC*</label>
+                <input type="text" ng-model="customer.FirstName" class="form-control input-lg" placeholder="First Name" />
+                <label for="inputLastName" translate>LNC*</label>
+                <input type="text" ng-model="customer.LastName" class="form-control input-lg" placeholder="Last Name" />
             </div>
             <div class="form-group">
                 <label for="inputCPF">CPF*</label>
                 <input type="text" ng-model="customer.CPF" class="form-control input-lg" placeholder="CPF" />
-                <label for="inputBirthDate">Birth Date*</label>
-                <input type="text" ng-model="customer.BirthDate" class="form-control input-lg" placeholder="Birth Date" />
-                <label for="inputProfession">Profession</label>
+                <label for="inputBirthDate" translate>BDC*</label>
+                <input type="text" ng-model="customer.BirthDate" class="form-control input-lg" placeholder="Birth of Date" />
+                <label for="inputProfession" translate>PROF</label>
                 <select ng-model="customer.Profession" class="form-control input-lg">
-                    <option value="" placeholder="Profession">Choose  the profession</option>
+                    <option value="" placeholder="Profession" translate>Choose</option>
                     <option ng-repeat="x in data.profession" value="{{x.ProfessionId}}">{{x.NameProfession}}</option>
                 </select>
             </div>
-            <button ng-click="AddCust()" class="btn btn-info form-control input-lg">Save</button>
+            <button ng-click="AddCust()" class="btn btn-info form-control input-lg" translate>Add</button>
         </form>
     </div>
 </div>

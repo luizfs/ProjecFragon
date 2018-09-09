@@ -11,17 +11,17 @@
     <div class="container">
         <nav role="navigation" class="navbar navbar-inverse" ng-controller="TranslationController">
             <ul class="nav navbar-nav">
-                <li><a href="/#!/ListCustomers" translate>ListCustomer</a></li>
-                <li><a href="/#!/AddCustomers" translate>AddCustomer</a></li>
+                <li><a href="/#!/ListCustomers" translate>LC</a></li>
+                <li><a href="/#!/AddCustomers" translate>AC</a></li>
             </ul>
-            <span><a class="navbar-brand navbar-right" href="#" ng-click="changeLanguage('pt')">pt-br</a></span>
-            <span><a class="navbar-brand navbar-right" href="#" ng-click="changeLanguage('en')">en-us</a></span>
+            <span><a class="navbar-brand navbar-right" ng-click="changeLanguage('pt')">pt-br</a></span>
+            <span><a class="navbar-brand navbar-right" ng-click="changeLanguage('en')">en-us</a></span>
         </nav>
         <div ng-view>
 
         </div>
 
-        <h3 style="margin-top:40px" class="text-center text-info"> Test Fagron</h3>
+        <h3 style="margin-top:40px" class="text-center text-info" translate>TF</h3>
     </div>
 
     <script src="Scripts/jquery-1.9.0.js"></script>
