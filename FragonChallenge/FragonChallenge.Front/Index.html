@@ -2,25 +2,26 @@
 <html ng-app="MyApp">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test Fagron</title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
- 
+
 </head>
 <body>
     <div class="container">
         <nav role="navigation" class="navbar navbar-inverse" ng-controller="TranslationController">
             <ul class="nav navbar-nav">
                 <li><a href="/#!/ListCustomers" translate>ListCustomer</a></li>
-                <li><a href="/#!/AddCustomers">Add Customer</a></li>
-                <li><a href="" ng-click="changeLanguage('en')">Add Customer</a></li>
+                <li><a href="/#!/AddCustomers" translate>AddCustomer</a></li>
             </ul>
-
+            <span><a class="navbar-brand navbar-right" href="#" ng-click="changeLanguage('pt')">pt-br</a></span>
+            <span><a class="navbar-brand navbar-right" href="#" ng-click="changeLanguage('en')">en-us</a></span>
         </nav>
         <div ng-view>
 
         </div>
 
-        <h3 style="margin-top:40px" class="text-center text-info"> Test Fragon</h3>
+        <h3 style="margin-top:40px" class="text-center text-info"> Test Fagron</h3>
     </div>
 
     <script src="Scripts/jquery-1.9.0.js"></script>
@@ -33,6 +34,7 @@
     <script src="Controllers/ListCustomersController.js"></script>
     <script src="Controllers/AddCustomersController.js"></script>
     <script src="Controllers/EditCustomersController.js"></script>
+    <script src="Controllers/DetailsCustomersController.js"></script>
     <script src="Controllers/TranslationController.js"></script>
     <script src="Services/CustomerService.js"></script>
 </body>

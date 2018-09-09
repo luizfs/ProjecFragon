@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FragonChallenge.Data
+namespace FagronChallenge.Data
 {
     public class CustomerData:ConfigData
     {
@@ -109,7 +109,7 @@ namespace FragonChallenge.Data
             cmd.Parameters.AddWithValue("@CPF", customer.CPF);
             cmd.Parameters.AddWithValue("@BirthDate", customer.BirthDate);
             cmd.Parameters.AddWithValue("@Age", customer.Age);
-            cmd.Parameters.AddWithValue("@Profession", customer.Profession);
+            cmd.Parameters.AddWithValue("@Profession", customer.Profession.GetValueOrDefault());
             try
             {
                 conexao.Open();
@@ -133,7 +133,7 @@ namespace FragonChallenge.Data
             cmd.Parameters.AddWithValue("@CPF", customer.CPF);
             cmd.Parameters.AddWithValue("@BirthDate", customer.BirthDate);
             cmd.Parameters.AddWithValue("@Age", customer.Age);
-            cmd.Parameters.AddWithValue("@Profession", customer.Profession);
+            cmd.Parameters.AddWithValue("@Profession", customer.Profession.GetValueOrDefault());
             try
             {
                 conexao.Open();

@@ -1,22 +1,34 @@
 ﻿MyApp.controller("AddCustomersController", function ($scope, CustomerApi) {
-    $scope.AddCust = function () {
-        var customerToAdd = {
-            'FirstName': $scope.FirstName,
-            'LastName': $scope.LastName,
-            'CPF': $scope.CPF,
-            'BirthDate': $scope.BirthDate,
-            'Profession': $scope.Profession
-        };
+    $scope.customer = {};
 
-        CustomerApi.AddCustomer(customerToAdd).then(function (response) {
-            alert("Customer added");
-            $scope.FirstName = undefined;
-            $scope.LastName = undefined;
-            $scope.CPF = undefined;
-            $scope.BirthDate = undefined;
-            $scope.Profession = undefined;
-        }, function (reponse) {
-            alert("Error in adding customer");
-        })         
+    $scope.startFront = function () {
+        $scope.customer = {
+            'FirstName': "",
+            'LastName': "",
+            'CPF': "",
+            'BirthDate': "",
+            'Profession': ""
+        };
+    }
+
+    $scope.AddCust = function () {
+        CustomerApi.AddCustomer($scope.customer)
+            .then(function (data) {
+                alert("Customer added");
+                $scope.startFront();
+            }, function (reponse) {
+                alert("Error in adding customer");
+            })
+    }
+
+    $scope.startFront();
+    getProfessions();
+    function getProfessions() {
+        $scope.data = [];
+        CustomerApi.getProfessions().then(function (data) {
+            $scope.data.profession = data.data;
+        }, function (error) {
+            $scope.status = 'Unable to load professions data: ' + error.message;
+        })
     }
 });

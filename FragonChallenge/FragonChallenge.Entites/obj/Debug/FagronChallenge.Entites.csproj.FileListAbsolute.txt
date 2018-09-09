@@ -1,0 +1,6 @@
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Entites\bin\Debug\FragonChallenge.Entites.dll
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Entites\bin\Debug\FragonChallenge.Entites.pdb
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Entites\obj\Debug\FagronChallenge.Entites.csprojAssemblyReference.cache
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Entites\obj\Debug\FagronChallenge.Entites.csproj.CoreCompileInputs.cache
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Entites\obj\Debug\FragonChallenge.Entites.dll
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Entites\obj\Debug\FragonChallenge.Entites.pdb

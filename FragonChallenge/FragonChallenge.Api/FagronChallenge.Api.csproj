@@ -113,17 +113,17 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FragonChallenge.Business\FragonChallenge.Business.csproj">
+    <ProjectReference Include="..\FragonChallenge.Business\FagronChallenge.Business.csproj">
       <Project>{74f85e28-8ad2-4438-9219-7473a998e1d7}</Project>
-      <Name>FragonChallenge.Business</Name>
+      <Name>FagronChallenge.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FragonChallenge.Data\FragonChallenge.Data.csproj">
+    <ProjectReference Include="..\FragonChallenge.Data\FagronChallenge.Data.csproj">
       <Project>{93a1c65b-4fb7-4e32-9f97-6025a5abe460}</Project>
-      <Name>FragonChallenge.Data</Name>
+      <Name>FagronChallenge.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FragonChallenge.Entites\FragonChallenge.Entites.csproj">
+    <ProjectReference Include="..\FragonChallenge.Entites\FagronChallenge.Entites.csproj">
       <Project>{d9a36a89-b04c-4df4-9b08-99d75b955c27}</Project>
-      <Name>FragonChallenge.Entites</Name>
+      <Name>FagronChallenge.Entites</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

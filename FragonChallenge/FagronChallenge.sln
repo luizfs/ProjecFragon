@@ -11,15 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{D70567A2-9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{14F9D383-D385-4045-958C-9A7A379EEE48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FragonChallenge.Data", "FragonChallenge.Data\FragonChallenge.Data.csproj", "{93A1C65B-4FB7-4E32-9F97-6025A5ABE460}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FagronChallenge.Data", "FragonChallenge.Data\FagronChallenge.Data.csproj", "{93A1C65B-4FB7-4E32-9F97-6025A5ABE460}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FragonChallenge.Business", "FragonChallenge.Business\FragonChallenge.Business.csproj", "{74F85E28-8AD2-4438-9219-7473A998E1D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FagronChallenge.Business", "FragonChallenge.Business\FagronChallenge.Business.csproj", "{74F85E28-8AD2-4438-9219-7473A998E1D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FragonChallenge.Api", "FragonChallenge.Api\FragonChallenge.Api.csproj", "{46379A3A-0CD6-40F2-988C-C11578798642}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FagronChallenge.Api", "FragonChallenge.Api\FagronChallenge.Api.csproj", "{46379A3A-0CD6-40F2-988C-C11578798642}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FragonChallenge.Front", "FragonChallenge.Front\FragonChallenge.Front.csproj", "{6EF1A877-5F24-4E1F-B009-50DAABD583BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FagronChallenge.Front", "FragonChallenge.Front\FagronChallenge.Front.csproj", "{6EF1A877-5F24-4E1F-B009-50DAABD583BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FragonChallenge.Entites", "FragonChallenge.Entites\FragonChallenge.Entites.csproj", "{D9A36A89-B04C-4DF4-9B08-99D75B955C27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FagronChallenge.Entites", "FragonChallenge.Entites\FagronChallenge.Entites.csproj", "{D9A36A89-B04C-4DF4-9B08-99D75B955C27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
 C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\bin\Debug\FragonChallenge.Data.dll
 C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\bin\Debug\FragonChallenge.Data.pdb
-C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\bin\Debug\FragonChallenge.Business.dll
-C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\bin\Debug\FragonChallenge.Business.pdb
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\bin\Debug\FragonChallenge.Entites.dll
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\bin\Debug\FragonChallenge.Entites.pdb
 C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\obj\Debug\FragonChallenge.Data.csprojAssemblyReference.cache
 C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\obj\Debug\FragonChallenge.Data.csproj.CoreCompileInputs.cache
 C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\obj\Debug\FragonChallenge.Data.csproj.CopyComplete

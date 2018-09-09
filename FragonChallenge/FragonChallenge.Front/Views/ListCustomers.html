@@ -1,7 +1,6 @@
 ﻿<!--<div class="row jumbotron">-->
   <h1 class="text-center text-danger" >Customers</h1>
   <hr/>
-  
   <div class="row">
       <div class="col-md-9 col-md-offset-1">
           <input type="text" placeholder="Type to filter here" class="input-lg form-control" ng-model="txtFilter" />
@@ -22,6 +21,9 @@
                   <td>{{a.FirstName}}</td>
                   <td>{{a.Age}}</td>
                   <td>
+                      <a href="" ng-click="delete(a.CustomerId)" translate>Delete</a>
+                      <a href="/#!/DetailsCustomers/{{a.CustomerId}}"translate>Details</a>
+                      <a href="/#!/EditCustomers/{{a.CustomerId}}" translate>Edit</a>
                   </td>
               </tr>
           </table>

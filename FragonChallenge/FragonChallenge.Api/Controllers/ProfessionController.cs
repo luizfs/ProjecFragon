@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace FragonChallenge.Api.Controllers
+namespace FagronChallenge.Api.Controllers
 {
     public class ProfessionController : ApiController
     {

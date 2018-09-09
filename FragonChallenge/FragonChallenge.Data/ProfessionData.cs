@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FragonChallenge.Data
+namespace FagronChallenge.Data
 {
     public class ProfessionData:ConfigData
     {

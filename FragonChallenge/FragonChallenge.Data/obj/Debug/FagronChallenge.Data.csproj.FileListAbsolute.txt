@@ -1,0 +1,9 @@
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\bin\Debug\FragonChallenge.Data.dll
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\bin\Debug\FragonChallenge.Data.pdb
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\bin\Debug\FragonChallenge.Entites.dll
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\bin\Debug\FragonChallenge.Entites.pdb
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\obj\Debug\FagronChallenge.Data.csprojAssemblyReference.cache
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\obj\Debug\FagronChallenge.Data.csproj.CoreCompileInputs.cache
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\obj\Debug\FagronChallenge.Data.csproj.CopyComplete
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\obj\Debug\FragonChallenge.Data.dll
+C:\Users\Luiz Fernando Santos\Desktop\FragonChallenge\FragonChallenge\FragonChallenge.Data\obj\Debug\FragonChallenge.Data.pdb

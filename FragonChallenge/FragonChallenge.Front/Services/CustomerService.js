@@ -7,35 +7,37 @@ CustomerService.factory('CustomerApi', function ($http) {
     var CustomerApi = {};
     
     CustomerApi.getCustomers = function () {
-        return $http.get(urlBase + '/Customer/Get');
+        return $http.get(urlBase + '/Customer');
     };
 
+    CustomerApi.getCustomersById = function (id) {
+        return $http.get(urlBase + '/Customer/' + id);
+    };
+
+    CustomerApi.getProfessions = function () {
+        return $http.get(urlBase + '/Profession');
+    };
+
+    CustomerApi.getProfessionsByid = function (id) {
+        return $http.get(urlBase + '/Profession/' + id);
+    };
     CustomerApi.AddCustomer = function (customer) {
-        //alert(customer);
-        //var req = $http({
-        //    method: 'post',
-        //    url: urlBase + '/Customer',
-        //    data: customer
-        //});
-        //return req;
-        return $http.post(urlBase + '/Customer/', customer);
+        return $http.post(urlBase + '/Customer', customer, {
+            headers: { 'Content-Type': 'application/json' }
+        })
     };
 
-
-    CustomerApi.EditCustomer = function (customerToUpdate) {
-
-        var request = $http({
-            method: 'put',
-            url: urlBase + '/Customer/' + customerToUpdate.CustomerId,
-            data: customer
-        });
-        return request;
+    CustomerApi.UpdCustomer = function (customer) {
+        return $http.put(urlBase + '/Customer', customer, {
+            headers: { 'Content-Type': 'application/json' }
+        })
     };
+
 
     CustomerApi.DeleteCustomer = function (customerIdToDelete) {
         var request = $http({
             method: 'delete',
-            url: urlBase + '/Customer/' + customerId.customerIdToDelete.CustomerId
+            url: urlBase + '/Customer/' + customerIdToDelete
         });
 
         return request;

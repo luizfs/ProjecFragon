@@ -10,14 +10,14 @@ MyApp.config(['$routeProvider', '$translateProvider',
                 controller: 'AddCustomersController'
             }).
             when('/EditCustomers/:id', {
-                templateUrl: 'Views/AddCustomers.html',
+                templateUrl: 'Views/EditCustomers.html',
                 controller: 'EditCustomersController'
             }).
             when('/ListCustomers', {
                 templateUrl: 'Views/ListCustomers.html',
                 controller: 'ListCustomersController'
             }).
-            when('/DetailsCustomers', {
+            when('/DetailsCustomers/:id', {
                 templateUrl: 'Views/DetailsCustomers.html',
                 controller: 'DetailsCustomersController'
             }).

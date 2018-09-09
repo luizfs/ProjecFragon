@@ -1,3 +1,7 @@
 ﻿{
-  "ListCustomer": "Lista de clientes"
+  "Edit": "Editar",
+  "Details": "Detalhes",
+  "Delete": "Deletar",
+  "ListCustomer": "Lista de clientes",
+  "AddCustomer": "Adicionar cliente"
 }
