@@ -1,3 +1,32 @@
-﻿<div class="row jumbotron">
-    <h2>{{message}}</h2>
-</div>
+﻿<!--<div class="row jumbotron">-->
+  <h1 class="text-center text-danger" >Customers</h1>
+  <hr/>
+  
+  <div class="row">
+      <div class="col-md-9 col-md-offset-1">
+          <input type="text" placeholder="Type to filter here" class="input-lg form-control" ng-model="txtFilter" />
+          <br />
+          <br />
+
+          <table class="table table-striped table-bordered">
+              <thead>
+                  <tr>
+                      <th>Customer Id</th>
+                      <th>First Name</th>
+                      <th>Age</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tr ng-repeat="a in data.customers|filter:txtFilter">
+                  <td>{{a.CustomerId}}</td>
+                  <td>{{a.FirstName}}</td>
+                  <td>{{a.Age}}</td>
+                  <td>
+                  </td>
+              </tr>
+          </table>
+
+      </div>
+  </div>
+
+<!--</div>-->

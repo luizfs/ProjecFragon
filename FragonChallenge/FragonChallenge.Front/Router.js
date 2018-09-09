@@ -1,6 +1,6 @@
 ﻿/// <reference path="scripts/angular.js" />
 
-var MyApp = angular.module("MyApp", ['ngRoute', 'pascalprecht.translate']);
+var MyApp = angular.module("MyApp", ['ngRoute', 'CustomerService', 'pascalprecht.translate']);
 
 MyApp.config(['$routeProvider', '$translateProvider',
     function ($routeProvider, $translateProvider) {
