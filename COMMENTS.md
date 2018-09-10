@@ -6,7 +6,7 @@
   - Front: Responsável por apresentar os dados para o usuário(Todas as telas da aplicação) e fazer requisições para Api.
   - Api: Responsável por receber as requisições da camada Front e envia-las para a camada Business retornando para a camada Front os resultados.
   - Business: Separei essa camada em outras duas, a Entities onde fica a nossa entidade (atributos) e a camada Business que trata toda a regra de negócio da entidade e chama a nossa camada de dados.
- -Data: Responsável por fazer toda a manipulação dos dados no banco de dados, somente essa camada consegue acessar o banco.
+  -Data: Responsável por fazer toda a manipulação dos dados no banco de dados, somente essa camada consegue acessar o banco.
 - Porque
   -	Optei por trabalhar com essa arquitetura visando a escalabilidade da aplicação.
  
