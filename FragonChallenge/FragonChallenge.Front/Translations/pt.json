@@ -22,6 +22,13 @@
   "Upd": "Atualizar",
   "Choose": "Escolha",
   "DetailCustomer": "Detalhes do Cliente",
-  "BC": "Voltar"
+  "BC": "Voltar",
+  "DLT": "Cliente deletado com sucesso!",
+  "EDLT": "Erro ao deletar cliente!",
+  "ADDS": "Cliente adicionado com sucesso!",
+  "EADDS": "Erro ao adicionar cliente!",
+  "UPDS": "Cliente atualizado com sucesso!",
+  "EUPDS": "Erro ao atualizar cliente!"
+
 
 }

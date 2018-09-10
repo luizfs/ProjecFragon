@@ -22,5 +22,14 @@
   "Upd": "Update",
   "Choose": "Choose",
   "DetailCustomer": "Datail's Customer",
-  "BC": "Back"
+  "BC": "Back",
+  "DLT": "Customer deleted successfully!",
+  "EDLT": "Error deleting customer!",
+  "ADDS": "Customer added successfully!",
+  "EADDS": "Error adding customer!",
+  "UPDS": "Customer successfully updated!",
+  "EUPDS": "Error updating customer"
+
 }
+
+

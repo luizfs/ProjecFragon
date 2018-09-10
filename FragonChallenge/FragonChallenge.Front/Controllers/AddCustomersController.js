@@ -10,11 +10,11 @@
             'Profession': ""
         };
     }
-
+ 
     $scope.AddCust = function () {
         CustomerApi.AddCustomer($scope.customer)
             .then(function (data) {
-                alert("Customer added");
+                alert("Cliente adicionado com sucesso!");
                 $scope.startFront();
             }, function (reponse) {
                 alert("Error in adding customer");

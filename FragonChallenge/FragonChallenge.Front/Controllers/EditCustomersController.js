@@ -2,21 +2,11 @@
 
     $scope.customer = {};
 
-    $scope.startFront = function () {
-        $scope.customer = {
-            'data.customers.FirstName': "",
-            'data.customers.LastName': "",
-            'data.customers.CPF': "",
-            'data.customers.BirthDate': "",
-            'data.customers.Profession': ""
-        };
-    }
-
     $scope.UpdCust = function () {
-        CustomerApi.UpdCustomer($scope.customer)
+        CustomerApi.UpdCustomer($scope.data.customers)
             .then(function (data) {
                 alert("Customer updated");
-                $scope.startFront();
+                window.location = "/#!/ListCustomers.html";
             }, function (reponse) {
                 alert("Error in updating customer");
             })

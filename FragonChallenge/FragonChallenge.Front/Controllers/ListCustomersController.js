@@ -11,7 +11,7 @@
 
     $scope.delete = function (id) {
         CustomerApi.DeleteCustomer(id);
-        alert("Deletado com sucesso!");
+        alert("Cliente deletado com sucesso!");
         setTimeout(function () { getCustomers(); }, 200);
     }
 
@@ -21,7 +21,7 @@
         CustomerApi.getCustomersById(id).then(function (data) {
             $scope.data.customers = data.data;
         }, function (error) {
-            $scope.status = 'Unable to load customers data: ' + error.message;
+            $scope.status = 'Unable to load customer data: ' + error.message;
         })
     }
 
