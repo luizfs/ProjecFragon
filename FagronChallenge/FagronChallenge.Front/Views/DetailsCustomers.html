@@ -1,0 +1,31 @@
+﻿<h1 class="text-center text-danger" translate>DC</h1>
+<hr />
+<div class="row">
+    <div class="col-md-9 col-md-offset-1">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th translate>FN</th>
+                    <th translate>LN</th>
+                    <th translate>CPF</th>
+                    <th translate>BD</th>
+                    <th translate>A</th>
+                    <th translate>PROF</th>
+                </tr>
+
+            </thead>
+            <tr>
+                <td>{{data.customers.FirstName}} </td>
+                <td>{{data.customers.LastName}}</td>
+                <td>{{data.customers.CPF}} </td>
+                <td>{{data.customers.BirthDate}}</td>
+                <td>{{data.customers.Age}} </td>
+                <td translate>{{data.customers.ProfessionDescription}}</td>
+            </tr>
+        </table>
+        <div class="text-center">
+            <button class="btn btn-info form-control input-lg" onclick="window.location.href='/#!/ListCustomers.html'" translate>BC</button>
+        </div>
+    </div>
+</div>
+
