@@ -19,6 +19,10 @@
   "DC": "Detalhes do Cliente",
   "UCA": "Atualizar Cliente",
   "Add": "Adicionar",
+  "Analyst": "Analista",
+  "Manager": "Gerente",
+  "Trainee": "Estagiário",
+  "Developer": "Desenvolvedor",
   "Upd": "Atualizar",
   "Choose": "Escolha",
   "DetailCustomer": "Detalhes do Cliente",
@@ -28,7 +32,6 @@
   "ADDS": "Cliente adicionado com sucesso!",
   "EADDS": "Erro ao adicionar cliente!",
   "UPDS": "Cliente atualizado com sucesso!",
-  "EUPDS": "Erro ao atualizar cliente!"
-
-
+  "EUPDS": "Erro ao atualizar cliente!",
+  "CPO": "Preencha os campos obrigatórios!"
 }

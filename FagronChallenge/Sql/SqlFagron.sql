@@ -13,8 +13,8 @@ create table Customer(
 	Profession int null
 );
 
-INSERT INTO Profession (NameProfession) values ('Programador');
-INSERT INTO Profession (NameProfession) values ('Analista');
-INSERT INTO Profession (NameProfession) values ('Gerente');
-INSERT INTO Profession (NameProfession) values ('Estagiário ');
+INSERT INTO Profession (NameProfession) values ('Developer');
+INSERT INTO Profession (NameProfession) values ('Analyst');
+INSERT INTO Profession (NameProfession) values ('Manager');
+INSERT INTO Profession (NameProfession) values ('Trainee');
 INSERT INTO Profession (NameProfession) values ('QA');

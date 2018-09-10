@@ -10,31 +10,6 @@ namespace FagronChallenge.Business
     {
         public int Insert(Entities.Customer customer)
         {
-            //if (customer.FirstName == null || customer.FirstName == "")
-            //    return 3;
-            //if (customer.LastName == null || customer.LastName == "")
-            //    return 3;
-            //if (customer.CPF == null || customer.CPF == "")
-            //{
-            //    return 3;
-            //}
-            //else
-            //{
-            //    customer.CPF = customer.CPF.Trim();
-            //    customer.CPF = customer.CPF.Replace(".", "").Replace("-", "");
-            //    if (!this.CheckCpfIsValid(customer.CPF))
-            //        return 2;
-            //    if (this.CheckExistsCpf(customer.CPF) != null)
-            //        return 1;
-            //}
-            //if (customer.BirthDate == null)
-            //{
-            //    return 3;
-            //}
-            //else
-            //{
-            //    customer.Age = this.CalcAge(customer.BirthDate);
-            //}
             customer.CPF = customer.CPF.Trim();
             customer.CPF = customer.CPF.Replace(".", "").Replace("-", "");
             customer.Age = this.CalcAge(customer.BirthDate);
@@ -43,33 +18,6 @@ namespace FagronChallenge.Business
         }
         public int Update(Entities.Customer customer)
         {
-            //    if (customer.FirstName == null || customer.FirstName == "")
-            //        return 3;
-            //    if (customer.LastName == null || customer.LastName == "")
-            //        return 3;
-            //    if (customer.CPF == null || customer.CPF == "")
-            //    {
-            //        return 3;
-            //    }
-            //    else
-            //    {
-            //        customer.CPF = customer.CPF.Trim();
-            //        customer.CPF = customer.CPF.Replace(".", "").Replace("-", "");
-            //        if (!this.CheckCpfIsValid(customer.CPF))
-            //            return 2;
-            //        var check = this.CheckExistsCpf(customer.CPF);
-            //        if (check != null)
-            //            if (check.CustomerId != customer.CustomerId)
-            //                return 1;
-            //    }
-            //    if (customer.BirthDate == null)
-            //    {
-            //        return 3;
-            //    }
-            //    else
-            //    {
-            //        customer.Age = this.CalcAge(customer.BirthDate);
-            //    }
             customer.CPF = customer.CPF.Trim();
             customer.CPF = customer.CPF.Replace(".", "").Replace("-", "");
             customer.Age = this.CalcAge(customer.BirthDate);

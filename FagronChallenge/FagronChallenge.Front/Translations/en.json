@@ -20,6 +20,10 @@
   "UCA": "Update Customer",
   "Add": "Add",
   "Upd": "Update",
+  "Analyst": "Analyst",
+  "Manager": "Manager",
+  "Trainee": "Trainee",
+  "Developer": "Developer",
   "Choose": "Choose",
   "DetailCustomer": "Datail's Customer",
   "BC": "Back",
@@ -28,8 +32,8 @@
   "ADDS": "Customer added successfully!",
   "EADDS": "Error adding customer!",
   "UPDS": "Customer successfully updated!",
-  "EUPDS": "Error updating customer"
-
+  "EUPDS": "Error updating custome!r",
+  "CPO": "Fill in the required fields!"
 }
 
 

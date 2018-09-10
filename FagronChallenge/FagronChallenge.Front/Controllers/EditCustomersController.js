@@ -1,14 +1,21 @@
 ﻿MyApp.controller("EditCustomersController", function ($scope, CustomerApi, $location) {
-
-
+    $scope.showmsg = false;
+    $scope.showmsgerro = false;
+    $scope.showmsgerroi = false;
 
     $scope.UpdCust = function () {
+        $scope.showmsg = false;
+        $scope.showmsgerro = false;
+        $scope.showmsgerroi = false;
+        if ($scope.data.customers.FirstName == "" || $scope.data.customers.LastName == "" || $scope.data.customers.CPF == "" || $scope.data.customers.BirthDate == "") {
+            $scope.showmsgerro = true;
+            return
+        }
         CustomerApi.UpdCustomer($scope.data.customers)
             .then(function (data) {
-                alert("Customer updated");
-                window.location = "/#!/ListCustomers.html";
+                $scope.showmsg = true;
             }, function (reponse) {
-                alert("Error in updating customer");
+                $scope.showmsgerroi = true;
             })
     }
 
@@ -20,6 +27,7 @@
         CustomerApi.getCustomersById(id).then(function (data) {
             $scope.data.customers = data.data;
             $scope.data.customers.Profession = $scope.data.customers.Profession.toString(); 
+            $scope.data.customers.BirthDate = new Date($scope.data.customers.BirthDate).toLocaleString("pt-BR");
         }, function (error) {
             $scope.status = 'Unable to load customers data: ' + error.message;
         })

@@ -18,16 +18,17 @@ CustomerService.factory('CustomerApi', function ($http) {
         return $http.get(urlBase + '/Profession');
     };
 
-    CustomerApi.getProfessionsByid = function (id) {
-        return $http.get(urlBase + '/Profession/' + id);
-    };
     CustomerApi.AddCustomer = function (customer) {
+        
+        customer.BirthDate = new Date(customer.BirthDate.replace(/(\d{2})\/(\d{2})\/(\d{4})/, "$2/$1/$3")).toISOString();
         return $http.post(urlBase + '/Customer', customer, {
             headers: { 'Content-Type': 'application/json' }
         })
     };
 
     CustomerApi.UpdCustomer = function (customer) {
+        console.log(customer);
+        customer.BirthDate = new Date(customer.BirthDate.replace(/(\d{2})\/(\d{2})\/(\d{4})/, "$2/$1/$3")).toISOString();
         return $http.put(urlBase + '/Customer', customer, {
             headers: { 'Content-Type': 'application/json' }
         })

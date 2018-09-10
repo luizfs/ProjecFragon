@@ -1,20 +1,22 @@
 ﻿<h1 class="text-center text-danger" translate>UCA</h1>
 <br />
-
+<div class="alert alert-success" ng-show="showmsg" translate>UPDS</div>
+<div class="alert alert-danger" ng-show="showmsgerro" translate>CPO</div>
+<div class="alert alert-danger" ng-show="showmsgerroi" translate>EUPDS</div>
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <form>
             <div class="form-group">
                 <label for="inputFirstName" translate>FNC*</label>
-                <input type="text" ng-model="data.customers.FirstName" class="form-control input-lg"/>
+                <input type="text" ng-model="data.customers.FirstName" class="form-control input-lg" />
                 <label for="inputLastName" translate>LNC*</label>
-                <input type="text" ng-model="data.customers.LastName" class="form-control input-lg"/>
+                <input type="text" ng-model="data.customers.LastName" class="form-control input-lg" />
             </div>
             <div class="form-group">
                 <label for="inputCPF">CPF*</label>
-                <input type="text" ng-model="data.customers.CPF" class="form-control input-lg"/>
+                <input type="text" ng-model="data.customers.CPF" class="form-control input-lg" ui-mask="999.999.999-99" />
                 <label for="inputBirthDate" translate>BDC*</label>
-                <input type="text" ng-model="data.customers.BirthDate" class="form-control input-lg"/>
+                <input type="text" ng-model="data.customers.BirthDate" class="form-control input-lg" model-view-value="true" ui-mask="99/99/9999" />
                 <label for="inputProfession" translate>PROF*</label>
                 <select ng-model="data.customers.Profession" class="form-control input-lg">
                     <option value="" translate>Choose</option>

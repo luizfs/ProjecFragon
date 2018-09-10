@@ -1,5 +1,10 @@
 ﻿<h1 class="text-center text-danger" translate>AC</h1>
 <br />
+
+<div class="alert alert-success" ng-show="showmsg" translate>ADDS</div>
+<div class="alert alert-danger" ng-show="showmsgerro" translate>CPO</div>
+<div class="alert alert-danger" ng-show="showmsgerroi" translate>EADDS</div>
+
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <form>
@@ -11,13 +16,13 @@
             </div>
             <div class="form-group">
                 <label for="inputCPF">CPF*</label>
-                <input type="text" ng-model="customer.CPF" class="form-control input-lg" ui-mask="99/99/9999"/>
+                <input type="text" ng-model="customer.CPF" class="form-control input-lg" ui-mask="999.999.999-99"/>
                 <label for="inputBirthDate" translate>BDC*</label>
-                <input type="text" ng-model="customer.BirthDate" class="form-control input-lg"/>
+                <input type="text" ng-model="customer.BirthDate" class="form-control input-lg" model-view-value="true" ui-mask="99/99/9999"/>
                 <label for="inputProfession" translate>PROF</label>
                 <select ng-model="customer.Profession" class="form-control input-lg">
                     <option value="" translate>Choose</option>
-                    <option ng-repeat="x in data.profession" value="{{x.ProfessionId}}">{{x.NameProfession}}</option>
+                    <option ng-repeat="x in data.profession" value="{{x.ProfessionId}}" translate>{{x.NameProfession}}</option>
                 </select>
             </div>
             <button ng-click="AddCust()" class="btn btn-info form-control input-lg" translate>Add</button>

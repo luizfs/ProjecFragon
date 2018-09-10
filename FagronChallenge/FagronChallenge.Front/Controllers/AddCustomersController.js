@@ -1,6 +1,8 @@
 ﻿MyApp.controller("AddCustomersController", function ($scope, CustomerApi) {
     $scope.customer = {};
-
+    $scope.showmsg = false;
+    $scope.showmsgerro = false;
+    $scope.showmsgerroi = false;
     $scope.startFront = function () {
         $scope.customer = {
             'FirstName': "",
@@ -10,14 +12,22 @@
             'Profession': ""
         };
     }
+
  
     $scope.AddCust = function () {
+        $scope.showmsg = false;
+        $scope.showmsgerro = false;
+        $scope.showmsgerroi = false;
+        if ($scope.customer.FirstName == "" || $scope.customer.LastName == "" || $scope.customer.CPF == "" || $scope.customer.BirthDate == "") {
+            $scope.showmsgerro = true;
+            return
+        }
         CustomerApi.AddCustomer($scope.customer)
             .then(function (data) {
-                alert("Cliente adicionado com sucesso!");
+                $scope.showmsg = true;
                 $scope.startFront();
             }, function (reponse) {
-                alert("Error in adding customer");
+                $scope.showmsgerroi = true;
             })
     }
 

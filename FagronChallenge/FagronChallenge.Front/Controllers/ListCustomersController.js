@@ -1,5 +1,7 @@
 ﻿MyApp.controller("ListCustomersController", function ($scope, CustomerApi) {
     getCustomers();
+    $scope.showmsg = false;
+    $scope.showmsgerro = false;
     function getCustomers() {
         $scope.data = [];
         CustomerApi.getCustomers().then(function (data) {
@@ -11,7 +13,7 @@
 
     $scope.delete = function (id) {
         CustomerApi.DeleteCustomer(id);
-        alert("Cliente deletado com sucesso!");
+        $scope.showmsg = true;
         setTimeout(function () { getCustomers(); }, 200);
     }
 
