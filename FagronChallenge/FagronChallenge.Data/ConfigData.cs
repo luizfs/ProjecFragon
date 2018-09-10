@@ -13,7 +13,7 @@ namespace FagronChallenge.Data
         protected SqlConnection conexao;
         public ConfigData()
         {
-            string ConnString = "Data Source =.\\SQLEXPRESS; Initial Catalog = fragonchallenge; Integrated Security = True; MultipleActiveResultSets = True";
+            string ConnString = "Data Source =.\\SQLEXPRESS; Initial Catalog = fagronchallenge; Integrated Security = True; MultipleActiveResultSets = True";
             conexao = new SqlConnection(ConnString);
         }
 

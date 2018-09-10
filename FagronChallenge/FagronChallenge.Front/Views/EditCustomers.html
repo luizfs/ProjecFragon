@@ -20,7 +20,7 @@
                 <label for="inputProfession" translate>PROF*</label>
                 <select ng-model="data.customers.Profession" class="form-control input-lg">
                     <option value="" translate>Choose</option>
-                    <option ng-repeat="x in data.profession" value="{{x.ProfessionId}}">{{x.NameProfession}}</option>
+                    <option ng-repeat="x in data.profession" value="{{x.ProfessionId}}" translate>{{x.NameProfession}}</option>
                 </select>
             </div>
             <button ng-click="UpdCust()" class="btn btn-info form-control input-lg" translate>Upd</button>

@@ -13,7 +13,6 @@
         };
     }
 
- 
     $scope.AddCust = function () {
         $scope.showmsg = false;
         $scope.showmsgerro = false;

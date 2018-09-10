@@ -27,7 +27,6 @@ CustomerService.factory('CustomerApi', function ($http) {
     };
 
     CustomerApi.UpdCustomer = function (customer) {
-        console.log(customer);
         customer.BirthDate = new Date(customer.BirthDate.replace(/(\d{2})\/(\d{2})\/(\d{4})/, "$2/$1/$3")).toISOString();
         return $http.put(urlBase + '/Customer', customer, {
             headers: { 'Content-Type': 'application/json' }
